@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int FirstNotRepeatingChar(string str) {
+     int cnt[58]={0},len=str.length();
+        for(int i=0;i<len;++i)
+        {
+            cnt[str[i]-'A']++;
+        }
+        for(int i=0;i<len;i++)
+        {
+            if(cnt[str[i]-'A']==1)
+                return i;
+        }
+        return -1;
+    }
+};
